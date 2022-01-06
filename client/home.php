@@ -12,12 +12,8 @@
             </p>
           </div>
           <div class="col-lg-9">
-
-
-
-
-            <div class="nonloop-block-13 owl-carousel">
-              <div class="item-1">
+            <div class="nonloop-block-13 owl-carousel" id="kepecskek">
+              <!--div class="item-1">
                 <a href="#"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></a>
                 <div class="item-1-contents">
                   <div class="text-center">
@@ -92,7 +88,7 @@
                     <a href="contact.html" class="btn btn-primary">Rent Now</a>
                   </div>
                 </div>
-              </div>
+              </div-->
 
             </div>
             
@@ -100,6 +96,74 @@
         </div>
       </div>
     </div>
+
+    <script>
+      //console.log(siteCarousel);
+      
+  fetch('../server/readAutok.php')
+    .then(response=>response.json())
+    .then(data=>szakrender(data))
+
+    function szakrender(data){
+      console.log(data);
+      let tblStrszak = '';
+          
+          for(let obj of data) {
+            tblStrszak += `
+            <div class="item-1">
+                <a href="#"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
+                <div class="item-1-contents">
+                  <div class="text-center">
+                  <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                  <div class="rating">
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                    <span class="icon-star text-warning"></span>
+                  </div>
+                  <div class="rent-price"><span>$250/</span>day</div>
+                  </div>
+                  <ul class="specs">
+                    <li>
+                      <span>Doors</span>
+                      <span class="spec">4</span>
+                    </li>
+                    <li>
+                      <span>Seats</span>
+                      <span class="spec">5</span>
+                    </li>
+                    <li>
+                      <span>Transmission</span>
+                      <span class="spec">Automatic</span>
+                    </li>
+                    <li>
+                      <span>Minium age</span>
+                      <span class="spec">18 years</span>
+                    </li>
+                  </ul>
+                  <div class="d-flex action">
+                    <a href="contact.html" class="btn btn-primary">Rent Now</a>
+                  </div>
+                </div>
+              </div>`
+          }
+          
+          document.getElementById('kepecskek').innerHTML = tblStrszak;
+          initialisation();
+          
+        }
+
+        function csillag (db) {
+          let a = "";
+
+          for(let i = 0; i<db; i++) {
+            a += `<span class="icon-star text-warning"></span>`;
+          }
+
+          return a;
+        }
+</script>
 
     <div class="site-section section-3" style="background-image: url('images/hero_2.jpg');">
       <div class="container">
