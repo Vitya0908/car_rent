@@ -309,43 +309,58 @@
             tblStrszak += `
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="item-1">
-              <a href="#"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
+              <a href="#"><img src="images/${obj.kep}" alt="Image" class="img-fluid"></a>
               <div class="item-1-contents">
               <div class="text-center">
               <h3><a href="#">${obj.auto_nev}</a></h3>
               <div class="rating">
                 ${csillag(obj.mertek)}
               </div>
-              <div class="rent-price"><span>$250/</span>day</div>
+              <div class="rent-price"><span>${obj.ar}HUF/nap</span></div>
               </div>
               <ul class="specs">
               <li>
               <span>Márka</span>
               <span class="spec">${obj.marka}</span>
               </li>
+
               <li>
               <span>Típus</span>
-              <span class="spec">5</span>
+              <span class="spec">${obj.auto_nev}</span>
               </li>
+
               <li>
               <span>Váltó</span>
-              <span class="spec">Automatic</span>
+              <span class="spec">${obj.valto}</span>
               </li>
+
               <li>
               <span>Évjárat</span>
-              <span class="spec">18 years</span>
+              <span class="spec">${obj.evjarat}</span>
               </li>
+
               <li>
               <span>Teljesítmény</span>
-              <span class="spec">18 years</span>
+              <span class="spec">${obj.loero} LE</span>
               </li>
+
               <li>
               <span>Ülések száma</span>
-              <span class="spec">18 years</span>
+              <span class="spec">${obj.ulesek_szama}</span>
+              </li>
+
+              <li>
+              <span>Rendszám</span>
+              <span class="spec">${obj.rendszam}</span>
+              </li>
+
+              <li>
+              <span>Szín</span>
+              <span class="spec">${obj.szin}</span>
               </li>
               </ul>
               <div class="d-flex action">
-              <a href="contact.html" class="btn btn-primary">Rent Now</a>
+              <a href="contact.html" class="btn btn-primary">Foglalás</a>
               </div>
               </div>
               </div>

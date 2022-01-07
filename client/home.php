@@ -6,9 +6,9 @@
             <h3>Our Offer</h3>
             <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure nesciunt nemo vel earum maxime neque!</p>
             <p>
-              <a href="#" class="btn btn-primary custom-prev">Previous</a>
+              <a href="#" class="btn btn-primary custom-prev">Előző</a>
               <span class="mx-2">/</span>
-              <a href="#" class="btn btn-primary custom-next">Next</a>
+              <a href="#" class="btn btn-primary custom-next">Következő</a>
             </p>
           </div>
           <div class="col-lg-9">
@@ -111,10 +111,11 @@
           for(let obj of data) {
             tblStrszak += `
             <div class="item-1">
-                <a href="#"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
+            <a href="#"><img src="images/${obj.kep}" alt="Image" class="img-fluid"></a>
+               
                 <div class="item-1-contents">
                   <div class="text-center">
-                  <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                  <h3><a href="#">${obj.marka} ${obj.auto_nev}</a></h3>
                   <div class="rating">
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-warning"></span>
@@ -122,28 +123,51 @@
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-warning"></span>
                   </div>
-                  <div class="rent-price"><span>$250/</span>day</div>
+                  <div class="rent-price"><span>${obj.ar}HUF/nap</span></div>
                   </div>
                   <ul class="specs">
-                    <li>
-                      <span>Doors</span>
-                      <span class="spec">4</span>
-                    </li>
-                    <li>
-                      <span>Seats</span>
-                      <span class="spec">5</span>
-                    </li>
-                    <li>
-                      <span>Transmission</span>
-                      <span class="spec">Automatic</span>
-                    </li>
-                    <li>
-                      <span>Minium age</span>
-                      <span class="spec">18 years</span>
-                    </li>
+                  <li>
+              <span>Márka</span>
+              <span class="spec">${obj.marka}</span>
+              </li>
+
+              <li>
+              <span>Típus</span>
+              <span class="spec">${obj.auto_nev}</span>
+              </li>
+
+              <li>
+              <span>Váltó</span>
+              <span class="spec">${obj.valto}</span>
+              </li>
+
+              <li>
+              <span>Évjárat</span>
+              <span class="spec">${obj.evjarat}</span>
+              </li>
+
+              <li>
+              <span>Teljesítmény</span>
+              <span class="spec">${obj.loero} LE</span>
+              </li>
+
+              <li>
+              <span>Ülések száma</span>
+              <span class="spec">${obj.ulesek_szama}</span>
+              </li>
+
+              <li>
+              <span>Rendszám</span>
+              <span class="spec">${obj.rendszam}</span>
+              </li>
+
+              <li>
+              <span>Szín</span>
+              <span class="spec">${obj.szin}</span>
+              </li>
                   </ul>
                   <div class="d-flex action">
-                    <a href="contact.html" class="btn btn-primary">Rent Now</a>
+                    <a href="contact.html" class="btn btn-primary">Foglalás</a>
                   </div>
                 </div>
               </div>`
